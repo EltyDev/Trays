@@ -25,7 +25,8 @@
         "minimize": true,
         "unmaximize": true,
         "unminimize": true,
-        "startDragging": true
+        "startDragging": true,
+        "setResizable": true
       }
     },
     "bundle": {
@@ -49,7 +50,8 @@
         "resizable": true,
         "title": "Trays",
         "center": true,
-        "maximized": true,
+        "width": 800,
+        "height": 450,
         "decorations": false
       }
     ]
