@@ -1,0 +1,42 @@
+name: "Test the project"
+
+on:
+  push:
+    branches:
+      - dev
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install frontend dependencies
+        run: |
+          cd trays_gui
+          npm install
+
+      - name: Launch frontend tests
+        run: |
+          cd trays_gui
+          npm run test:unit
+      
+      - name: Launch backend tests
+        run: |
+          cd trays_gui/src-tauri
+          cargo test
+
+      - name: Check compilation
+        run: |
+          cd trays_gui
+          npm run tauri build
