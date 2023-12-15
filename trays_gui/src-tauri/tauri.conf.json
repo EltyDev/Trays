@@ -50,8 +50,10 @@
         "resizable": true,
         "title": "Trays",
         "center": true,
-        "width": 800,
-        "height": 450,
+        "minWidth": 1280,
+        "minHeight": 720,
+        "width": 1600,
+        "height": 900,
         "decorations": false
       }
     ]

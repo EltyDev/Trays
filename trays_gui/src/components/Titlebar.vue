@@ -21,23 +21,22 @@
 
 <style scoped>
 
-    @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
     .titlebar {
         width: 100%;
         display: flex;
         align-items: center;
         flex-direction: row;
         justify-content: space-between;
-        font-family: Inter;
         color: white;
         height: 2em;
-        background-color: #242424;
         user-select: none;
-        -ms-user-select: none
+        -ms-user-select: none;
+        background-color: #1E1E1E;
     }
 
     .titlebar > * {
         padding: 0 0.75em 0 0.75em;
+        pointer-events: none;
     }
 
     #title {
@@ -63,7 +62,8 @@
     }
 
     .titlebuttons > * {
-        width: 1.2em;
+        pointer-events: auto;
+        width: 1.5em;
         padding: 0.25em;
         height: auto;
     }
